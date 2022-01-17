@@ -1,0 +1,36 @@
+name: 'Create GMUD'
+description: 'Create GMUD'
+inputs: 
+  domain:
+    description: 'url jira'
+    required: true
+  basic-auth:
+    description: 'jira authentication'
+    required: true
+  api-key:
+    description: 'jira api key'
+    required: true
+  service-desk-id:
+    description: 'service desk id'
+    required: true
+  request-type-id:
+    description: 'request type id'
+    required: true  
+  service:
+    description: 'service'
+    required: true
+  tecnical-approval:
+    description: 'tecnical approval'
+    required: true
+  business-approval:
+    description: 'business approval'
+    required: true
+  url-pull-request:
+    description: 'url pull request'
+    required: true 
+outputs:
+  result:
+    description: 'finished process'
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
