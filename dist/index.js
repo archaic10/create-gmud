@@ -11536,7 +11536,7 @@ async function getDataJiraIssue(idIssue){
         let basic_auth = core.getInput('basic-auth')
         await verifyJiraIssue(url, basic_auth)
         if(verifyJiraIssue)
-            createGMUD(url)
+            createGMUD()
     }catch(error){
         core.setFailed(error.message)
     }   
@@ -11558,7 +11558,8 @@ async function verifyJiraIssue(url, basic_auth){
     })
 }
 
-async function createGMUD(url_gmud){
+async function createGMUD(){
+    let url_gmud = 'http://kong-wallarm.redekasa.com/slifer/v1/gmud'
     let body = {
         serviceDeskId: core.getInput('service-desk-id'),
         requestTypeId: core.getInput('request-type-id'),
