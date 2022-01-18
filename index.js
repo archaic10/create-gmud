@@ -38,8 +38,6 @@ async function getDataJiraIssue(idIssue){
     
 }
 async function verifyJiraIssue(url, basic_auth){
-    console.log('url: ', url)
-    console.log('basic: ', basic_auth)
     await axios.get(url,
         {
             headers: {
@@ -51,8 +49,7 @@ async function verifyJiraIssue(url, basic_auth){
         return true
     }).catch((err) => {
         console.log(err)
-        core.setFailed("The Issue not found!, ERRO: ")
-
+        core.setFailed("The Issue not found!")
     })
 }
 
@@ -66,7 +63,7 @@ async function createGMUD(url_gmud){
         business_approval: core.getInput('business-approval'),
         url:  core.getInput('url-pull-request')
     }
-    await axios.get(url_gmud, body,
+    await axios.post(url_gmud, body,
         {
             headers: {
               'Authorization': core.getInput('basic_auth'),
