@@ -11580,6 +11580,9 @@ async function createGMUD(){
     
     }).then((res) => {
         console.log("A GMUD foi criada!")
+    }).catch((err) => {
+        console.log(err)
+        core.setFailed("Erro ao criar GMUD")
     })
 }
 
