@@ -11544,6 +11544,7 @@ async function getDataJiraIssue(idIssue){
 }
 async function verifyJiraIssue(url, basic_auth){
     console.log('url: ', url)
+    console.log('basic: ', basic_auth)
     await axios.get(url,
         {
             headers: {
@@ -11554,7 +11555,9 @@ async function verifyJiraIssue(url, basic_auth){
         console.log("The issue was found successfully!")
         return true
     }).catch((err) => {
-        core.setFailed("The Issue not found!, ERRO: ", err)
+        console.log(err)
+        core.setFailed("The Issue not found!, ERRO: ")
+
     })
 }
 
