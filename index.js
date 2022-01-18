@@ -27,7 +27,7 @@ async function validateTitle(){
 async function getDataJiraIssue(idIssue){
     try{
         let url = core.getInput('domain')
-        url = `${url}.atlassian.net/rest/api/3/issue/${idIssue}`
+        url = `https://${url}.atlassian.net/rest/api/3/issue/${idIssue}`
         let basic_auth = core.getInput('basic-auth')
         await verifyJiraIssue(url, basic_auth)
         if(verifyJiraIssue)
