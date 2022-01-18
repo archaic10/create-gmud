@@ -10,6 +10,9 @@ inputs:
   api-key:
     description: 'jira api key'
     required: true
+  auth-github:
+    description: 'github authentication'
+    required: true
   service-desk-id:
     description: 'service desk id'
     required: true

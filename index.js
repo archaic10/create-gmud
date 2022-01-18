@@ -65,8 +65,10 @@ async function createGMUD(url_gmud){
     await axios.get(url_gmud, body,
         {
             headers: {
-              Authorization: core.getInput('basic_auth'),
-              apikey: core.getInput('api-key')
+              'Authorization': core.getInput('basic_auth'),
+              'apikey': core.getInput('api-key'),
+              'auth_github': core.getInput('auth-github'),
+              'Content-Type': 'application/json'
             }
     
     }).then((res) => {
