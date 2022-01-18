@@ -11543,6 +11543,7 @@ async function getDataJiraIssue(idIssue){
     
 }
 async function verifyJiraIssue(url, basic_auth){
+    console.log('url: ', url)
     await axios.get(url,
         {
             headers: {
