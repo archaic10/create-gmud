@@ -45,11 +45,11 @@ async function verifyJiraIssue(url, basic_auth){
             }
     
     }).then((res) => {
-        console.log("The issue was found successfully!")
+        console.log("Issue válida!")
         return true
     }).catch((err) => {
         console.log(err)
-        core.setFailed("The Issue not found!")
+        core.setFailed("Issue não encontrada")
     })
 }
 
@@ -80,6 +80,7 @@ async function createGMUD(){
         })
     } catch (error) {
         console.log(error)
+        core.setFailed("Erro ao criar GMUD")
     }
    
 }
