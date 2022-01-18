@@ -11569,21 +11569,24 @@ async function createGMUD(){
         business_approval: core.getInput('business-approval'),
         url:  core.getInput('url-pull-request')
     }
-    await axios.post(url_gmud, body,
-        {
-            headers: {
-              'Authorization': core.getInput('basic_auth'),
-              'apikey': core.getInput('api-key'),
-              'auth_github': core.getInput('auth-github'),
-              'Content-Type': 'application/json'
-            }
-    
-    }).then((res) => {
-        console.log("A GMUD foi criada!")
-    }).catch((err) => {
-        console.log(err)
-        core.setFailed("Erro ao criar GMUD")
-    })
+
+    try {
+        await axios.post(url_gmud, body,
+            {
+                headers: {
+                  'Authorization': core.getInput('basic_auth'),
+                  'apikey': core.getInput('api-key'),
+                  'auth_github': core.getInput('auth-github'),
+                  'Content-Type': 'application/json'
+                }
+        
+        }).then((res) => {
+            console.log("A GMUD foi criada!")
+        })
+    } catch (error) {
+        console.log(error)
+    }
+   
 }
 
 
