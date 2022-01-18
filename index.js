@@ -54,7 +54,7 @@ async function verifyJiraIssue(url, basic_auth){
 }
 
 async function createGMUD(){
-    let url_gmud = 'http://kong-wallarm.redekasa.com/slifer/v1/gmud'
+    let url_gmud = core.getInput('url-slifer-gmud')
     let body = {
         serviceDeskId: core.getInput('service-desk-id'),
         requestTypeId: core.getInput('request-type-id'),
