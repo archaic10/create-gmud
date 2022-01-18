@@ -49,7 +49,7 @@ async function verifyJiraIssue(url, basic_auth){
         console.log("The issue was found successfully!")
         return true
     }).catch((err) => {
-        core.setFailed("The Issue not found!")
+        core.setFailed("The Issue not found!, ERRO: ", err)
     })
 }
 
