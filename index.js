@@ -59,7 +59,7 @@ async function createGMUD(){
         serviceDeskId: core.getInput('service-desk-id'),
         requestTypeId: core.getInput('request-type-id'),
         id_card_issue: keyJira,
-        service: core.getInput('service'),
+        service :[{"id" : "ari:cloud:graph::service/e27f7002-0a2f-11eb-98e1-0a77f3f45304/907c246a-0f3a-11ec-8fa8-0abe3f4a6601"}],
         tecnical_approval: core.getInput('tecnical-approval'),
         business_approval: core.getInput('business-approval'),
         url:  core.getInput('url-pull-request')
